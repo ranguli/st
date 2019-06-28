@@ -1,0 +1,82 @@
+diff --git a/config.h b/config.h
+index 482901e..dcf1438 100644
+--- a/config.h
++++ b/config.h
+@@ -82,44 +82,41 @@ char *termname = "st-256color";
+  */
+ unsigned int tabspaces = 8;
+ 
+-/* Terminal colors (16 first used in escape sequence) */
+-static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+-
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
++/* wal colors */
++const char *colorname[] = {
++
++  /* 8 normal colors */
++  [0] = "#0D1C1E", /* black   */
++  [1] = "#194C5E", /* red     */
++  [2] = "#982C33", /* green   */
++  [3] = "#A4304F", /* yellow  */
++  [4] = "#C14658", /* blue    */
++  [5] = "#455B90", /* magenta */
++  [6] = "#B7609B", /* cyan    */
++  [7] = "#aec2c0", /* white   */
++
++  /* 8 bright colors */
++  [8]  = "#798786",  /* black   */
++  [9]  = "#194C5E",  /* red     */
++  [10] = "#982C33", /* green   */
++  [11] = "#A4304F", /* yellow  */
++  [12] = "#C14658", /* blue    */
++  [13] = "#455B90", /* magenta */
++  [14] = "#B7609B", /* cyan    */
++  [15] = "#aec2c0", /* white   */
++
++  /* special colors */
++  [256] = "#0D1C1E", /* background */
++  [257] = "#aec2c0", /* foreground */
++  [258] = "#aec2c0",     /* cursor */
+ };
+ 
+-
+-/*
+- * Default colors (colorname index)
+- * foreground, background, cursor, reverse cursor
+- */
+-unsigned int defaultfg = 7;
+-unsigned int defaultbg = 0;
+-static unsigned int defaultcs = 256;
+-static unsigned int defaultrcs = 257;
++/* Default colors (colorname index)
++ * foreground, background, cursor */
++ unsigned int defaultbg = 0;
++ unsigned int defaultfg = 257;
++ unsigned int defaultcs = 258;
++ unsigned int defaultrcs= 258;
+ 
+ /*
+  * Default shape of cursor
